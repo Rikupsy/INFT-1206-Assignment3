@@ -1,83 +1,398 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>St Huxley's Community College</title>
-    <link href="../css/schoolHomePage.css" type="text/css" rel="stylesheet">
-  </head>
-  <body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St Huxley's Community College</title>
+<style>
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
-  <header>
+/* Original CSS */
+body {
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.logo {
+    font-size: 200%;
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 980px;
+}
+
+.grid {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+
+nav {
+    background-color: #000;
+    padding: .5em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: .5em 1em;
+}
+
+.photos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feature {
+    width: 200px;
+}
+
+/* Assignment CSS additions below */
+
+/* Page header styling */
+.page-header {
+    background: linear-gradient(to right, #8B4513, #D2691E);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+.page-header h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3.6rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Bottom border */
+.bottom-border {
+    background: linear-gradient(to right, #8B4513, #D2691E);
+    height: 10px;
+    margin-top: 40px;
+}
+
+/* Font application */
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/* Section paragraphs - first paragraph indentation */
+section > p:first-of-type,
+article > p:first-of-type {
+    text-indent: 20px;
+}
+
+/* Links styling */
+a:link {
+    color: #8B4513;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #654321;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: #D2691E;
+    text-decoration: none;
+}
+
+a:active {
+    color: #FF6347;
+    background-color: #FFF8DC;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Remove default focus outline */
+a {
+    outline: none;
+}
+
+/* External links icon */
+a[href^="http"]:after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #8B4513;
+}
+
+/* Lists styling */
+ul, ol {
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+li {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Custom bullet for content lists */
+article ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+article ul li:before {
+    content: "▪";
+    color: #8B4513;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Navigation menu styling */
+nav {
+    background-color: #8B4513;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #D2691E;
+    color: white;
+}
+
+nav a:active {
+    background-color: #FF6347;
+}
+
+/* Photo grid styling */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px;
+    padding: 20px 0;
+}
+
+.photos img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+}
+
+/* Course choices styling */
+.course-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-list li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.course-list li:before {
+    content: "→";
+    color: #8B4513;
+    margin-right: 8px;
+}
+
+/* Sidebar container */
+.sidebar-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.courses-section {
+    grid-column: 1;
+}
+
+.sidebar-nav {
+    grid-column: 3;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    border-bottom: none;
+    margin: 0;
+}
+
+.sidebar-nav li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 5px 0;
+    color: #8B4513;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    border-bottom: none;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus {
+    background-color: transparent;
+    color: #D2691E;
+}
+</style>
+</head>
+<body>
+<!--
+Name: Your Name
+File: homepage.html
+Date: XX September 202X
+A community college homepage with advanced typography styling for Assignment 3 Part 3.
+INFT1206 – Web Development Fundamentals
+-->
+
+<div class="page-header">
     <h1>St Huxley's Community College</h1>
-  </header>
+</div>
 
-  <section>
-      <h2>Brave new world</h2>
 
-      <p>It's a brave new world out there. Our children are being put in increasing more competitive situations, both during recreation, and as they start to move into the adult world of <a href="https://en.wikipedia.org/wiki/Examination">examinations</a>, <a href="https://en.wikipedia.org/wiki/Jobs">jobs</a>, <a href="https://en.wikipedia.org/wiki/Career">careers</a>, and other life choices. Having the wrong mindset, becoming <a href="https://en.wikipedia.org/wiki/Emotion">too emotional</a>, or making the wrong choices can contribute to them experiencing difficulty in taking their rightful place in today's ideal society.</p>
 
-      <p>As concerned parents, guardians or carers, you will no doubt want to give your children the best possible start in life — and you've come to the right place.</p>
+<main class="grid">
+    <article>
+        <section>
+            <h2>Brave new world</h2>
+            <p>It's a brave new world out there. Our children are being put in increasing more competitive situations, both during recreation, and as they start to move into the adult world of <a href="http://example.com">examinations</a>, <a href="http://example.com">jobs</a>, <a href="http://example.com">careers</a>, and other life choices. Having the wrong mindset, becoming <a href="http://example.com">too competitive</a>, or making the wrong choices can contribute to them experiencing difficulty in taking their rightful place in today's ideal society.</p>
+            
+            <p>As concerned parents, guardians or carers, you will no doubt want to give your children the best possible start in life — and you've come to the right place.</p>
+        </section>
 
-      <h2>The best start in life</h2>
+        <section>
+            <h2>The best start in life</h2>
+            <p>At St. Huxley's, we pride ourselves in not only giving our students a top quality education, but also giving them the societal and emotional intelligence they need to win big in the coming utopia. We not only excel at subjects such as genetics, data mining, and chemistry, but we also include compulsory lessons in:</p>
+            <ul>
+                <li>Emotional control</li>
+                <li>Judgement</li>
+                <li>Assertion</li>
+                <li>Focus and resolve</li>
+            </ul>
+            <p>If you are interested, then you next steps will likely be to:</p>
+            <ol>
+                <li><a href="">Call us</a> for more information</li>
+                <li><a href="http://example.com">Visit us</a> for a consultation, which includes signup form</li>
+            </ol>
+        </section>
+    </article>
 
-      <p>At St. Huxley's, we pride ourselves in not only giving our students a top quality education, but also giving them the societal and emotional intelligence they need to win big in the coming utopia. We not only excel at subjects such as genetics, data mining, and chemistry, but we also include compulsory lessons in:</p>
+    <aside>
+        <div class="sidebar-container">
+            <section class="courses-section">
+                <h2>Top course choices</h2>
+                <ul class="course-list">
+                    <li><a href="http://example.com">Genetic engineering</a></li>
+                    <li><a href="http://example.com">Genetic mutation</a></li>
+                    <li><a href="http://example.com">Organic Chemistry</a></li>
+                    <li><a href="http://example.com">Pharmaceuticals</a></li>
+                    <li><a href="http://example.com">Biochemistry with behaviour</a></li>
+                    <li><a href="http://example.com">Pure biochemistry</a></li>
+                    <li><a href="http://example.com">Data mining</a></li>
+                    <li><a href="http://example.com">Computer security</a></li>
+                    <li><a href="http://example.com">Bioinformatics</a></li>
+                    <li><a href="http://example.com">Cybernetics</a></li>
+                </ul>
+                <p><a href="http://example.com">See more</a></p>
+            </section>
 
-      <ul>
-        <li>Emotional control</li>
-        <li>Judgement</li>
-        <li>Assertion</li>
-        <li>Focus and resolve</li>
-      </ul>
+            <div class="sidebar-nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Finding us</a></li>
+                    <li><a href="">Courses</a></li>
+                    <li><a href="">Staff</a></li>
+                    <li><a href="">Media</a></li>
+                    <li><a href="">Prospectus</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+</main>
 
-      <p>If you are interested, then you next steps will likely be to:</p>
-      
-      <ol>
-        <li><a href="#">Call us</a> for more information</li>
-        <li><a href="#">Ask for a brochure</a>, which includes signup form</li>
-        <li><a href="#">Book a visit</a>!</li>
-      </ol>
-  </section>
+<div class="bottom-border"></div>
 
-  <aside>
-
-    <h2>Top course choices</h2>
-
-    <ul>
-      <li><a href="#">Genetic engineering</a></li>
-      <li><a href="#">Genetic mutation</a></li>
-      <li><a href="#">Organic Chemistry</a></li>
-      <li><a href="#">Pharmaceuticals</a></li>
-      <li><a href="#">Biochemistry with behaviour</a></li>
-      <li><a href="#">Pure biochemistry</a></li>
-      <li><a href="#">Data mining</a></li>
-      <li><a href="#">Computer security</a></li>
-      <li><a href="#">Bioinformatics</a></li>
-      <li><a href="#">Cybernetics</a></li>
-    </ul>
-
-    <p><a href="#">See more</a></p>
-
-  </aside>
-
-  <nav>
-
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Finding us</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">Staff</a></li>
-      <li><a href="#">Media</a></li>
-      <li><a href="#">Prospectus</a></li>
-    </ul>
-
-  </nav>
-
-  <footer>
-
-    <p>&copy; 2016 St Huxley's Community College</p>
-
-  </footer>
-
-  </body>
+</body>
 </html>
