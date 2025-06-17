@@ -3,3 +3,50 @@ html {
 }
 
 /* Your CSS below here */
+
+div {
+  /* Box dimensions */
+  width: 200px;
+  height: 200px;
+  
+  /* Center the box horizontally */
+  margin: 50px auto;
+  
+  /* Center text within the box */
+  text-align: center;
+  
+  /* Center text vertically using flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Font size calculation: 17px target / 16px default = 1.0625rem */
+  /* Using 1.1rem for approximately 17.6px on most browsers */
+  font-size: 1.1rem;
+  
+  /* Base color and contrasting text */
+  background-color:red;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  
+  /* Border styling */
+  border-radius: 8px;
+  border: 1px solid #2980b9;
+  
+  /* Linear gradient overlay */
+  background-image: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  
+  /* Multiple box shadows for 3D effect */
+  box-shadow: 
+    /* Standard shadow for raised effect */
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    /* Inset white shadow (top-left highlight) */
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    /* Inset black shadow (bottom-right depth) */
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+}
